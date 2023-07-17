@@ -1,43 +1,34 @@
-import { Link } from 'react-scroll/modules'
+import Link from 'next/link'
 
 export function Navigation() {
-    return (
-        <nav className="hidden lg:block mx-auto ">
-          <ul className="flex gap-10 items-center border-[0.2px] border-zinc-400/40 px-8 py-3 rounded-full bg-zinc-800/60 backdrop-blur-xl">
-            <li>
-              <a
-                href='home'
-                className="font-medium text-sm text-gray-300 hover:text-violet-400 transition ease cursor-pointer"
-              >
-                Início
-              </a>
-            </li>
-            
-            <li>
-              <a
-                href='#'
-                className="font-medium text-sm text-gray-300 hover:text-violet-400 transition ease cursor-pointer"
-              >
-                Skills
-              </a>
-            </li>
-            <li>
-              <a
-                href='#'
-                className="font-medium text-sm text-gray-300 hover:text-violet-400 transition ease cursor-pointer"
-              >
-                Projetos
-              </a>
-            </li>
-            <li>
-              <a
-                href='#'
-                className="font-medium text-sm text-gray-300 hover:text-violet-400 transition ease cursor-pointer"
-              >
-                Contato
-              </a>
-            </li>
-          </ul>
-        </nav>
-    )
+  return (
+    <nav className="mx-auto hidden lg:block ">
+      <ul className="flex items-center rounded-full border border-white/10 bg-zinc-800/60 px-3 py-2 text-zinc-200 shadow-lg shadow-zinc-800/5 backdrop-blur">
+        <li>
+          <Link
+            href="#"
+            className="ease cursor-pointer px-3  text-sm font-medium transition hover:text-violet-400"
+          >
+            Sobre
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="#"
+            className="ease cursor-pointer px-3  text-sm font-medium transition hover:text-violet-400"
+          >
+            Projetos
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="#"
+            className="ease cursor-pointer px-3  text-sm font-medium transition hover:text-violet-400"
+          >
+            Skills
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  )
 }

@@ -1,3 +1,4 @@
+import { Header } from '@/components/ui/header'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -15,7 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-black text-zinc-100 scroll-smooth overflow-x-hidden`}>{children}</body>
+      <body
+        className={`${inter.className} overflow-x-hidden scroll-smooth bg-black text-zinc-100`}
+      >
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }

@@ -1,16 +1,11 @@
-import { Hero } from "@/components/hero";
-import { Header } from "@/components/ui/header";
-
-import { Techs } from "@/components/techs"; 
-import { Projects } from "@/components/projects";
+import { Hero } from '@/components/hero'
+import { Images } from '@/components/images'
 
 export default function Home() {
   return (
-    <div>
-      <Header />
+    <div className="h-full min-h-screen w-full">
       <Hero />
-      <Techs />
-      <Projects />
+      <Images />
     </div>
   )
 }

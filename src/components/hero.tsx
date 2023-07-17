@@ -1,63 +1,94 @@
-import Link from "next/link";
-import { Particles } from "./ui/particles";
-import ReactWrapBalancer from "react-wrap-balancer";
-import { ArrowRight } from "lucide-react";
+import Link from 'next/link'
+import { Particles } from './ui/particles'
+import ReactWrapBalancer from 'react-wrap-balancer'
+import { Avatar, AvatarImage } from './ui/avatar'
+
+import Github from '../assets/icons/github'
+import { Instagram } from '../assets/icons/instagram'
+import { Linkedin } from '../assets/icons/linkedin'
+import { Twitter } from '../assets/icons/twitter'
+
+const social = [
+  {
+    id: 1,
+    label: 'github',
+    link: '#',
+    icon: Github,
+  },
+  {
+    id: 2,
+    label: 'linkedin',
+    link: '#',
+    icon: Linkedin,
+  },
+  {
+    id: 3,
+    label: 'twitter',
+    link: '#',
+    icon: Twitter,
+  },
+  {
+    id: 4,
+    label: 'instagram',
+    link: '#',
+    icon: Instagram,
+  },
+]
 
 export function Hero() {
-    return (
-        <section>
-            <div className="relative max-w-6xl px-4 mx-auto sm:px-6 xl:mt-20">
-                <Particles className="absolute inset-0 -z-10 " />
+  return (
+    <section>
+      <div className="relative mx-auto max-w-6xl px-12 sm:px-6">
+        <Particles className="absolute inset-0 -z-10" />
+        <div className="pb-10 pt-32">
+          <div className="max-w-2xl">
+            <Avatar className="mb-9 h-16 w-16">
+              <AvatarImage src="https://github.com/Nicolas-Moises.png" />
+            </Avatar>
+            <h1
+              className="bg-gradient-to-r from-zinc-200/60 via-zinc-200 to-zinc-200/60 bg-clip-text text-5xl font-extrabold tracking-tighter 
+                text-transparent lg:text-5xl"
+            >
+              <ReactWrapBalancer>
+                Um design engineering criando{' '}
+                <span className="">interfaces</span> incríveis.
+              </ReactWrapBalancer>
+            </h1>
+            <p className="my-8 text-base leading-relaxed text-zinc-400">
+              Me chamo Nicolas, sou um design engineering em início de carreira
+              atualmente vivendo em São Paulo - Brasil. Atuo principalmente no
+              front end com as stacks mais atuais seguindo tendencias do
+              mercado, porém construo e/ou atuo também em aplicações full.
+            </p>
 
-                <div className="pt-32 pb-16 md:pt-52 md:pb-32">
-                    <div className="container mx-auto text-center">
-                        <div className="mb-6">
-                            <div className="relative inline-flex before:absolute before:inset-0 ">
-                                <div
-                                className="px-3 py-1 text-sm font-medium inline-flex items-center justify-center border border-zinc-400/30 bg-zinc-500/10 rounded-full
-                                text-transparent bg-clip-text bg-gradient-to-tr from-zinc-200/60 via-zinc-200 to-zinc-200/60 w-full group hover:cursor-default"
-                                >
-                                        Prazer, sou o Nicolas Moises
-                                </div>
-                            </div>
-                        </div>
-                        <h1 className="pb-4 font-extrabold tracking-tight text-transparent text-7xl lg:text-8xl bg-clip-text bg-gradient-to-r from-zinc-200/60 via-zinc-200 to-zinc-200/60">
-                            <ReactWrapBalancer>
-                                Criando{' '}
-                                <span className="">
-                                    interfaces 
-                                </span> 
-                                {' '} incríveis
-                            </ReactWrapBalancer>
-                        </h1>
-                        <p className="mb-8 text-lg text-zinc-400">
-                            Bem vindo ao meu portfólio, aqui o design é centrado no usuário em primeiro lugar.
-                        </p>
+            <div className="flex items-center gap-6">
+              {social.map((link) => {
+                return (
+                  <Link key={link.id} href={link.link}>
+                    <link.icon className="h-5 w-5 fill-zinc-400 transition-colors duration-100 hover:fill-zinc-200" />
+                  </Link>
+                )
+              })}
+              {/* <Link
+                className="group flex w-full items-center justify-center whitespace-nowrap rounded-md border border-violet-300 bg-gradient-to-r from-violet-500/80 via-violet-500  to-purple-300/80 px-5 
+                            py-3 font-medium leading-none text-white transition duration-150 ease-in-out hover:bg-violet-400"
+                href="/#"
+              >
+                Baixar currículo{' '}
+                <ArrowRight className="ml-1 h-3 w-3 tracking-normal text-white transition-transform duration-150 ease-in-out group-hover:translate-x-0.5" />
+              </Link>
 
-                        <div
-                            className="flex flex-col items-center max-w-xs mx-auto gap-4 sm:max-w-none  sm:justify-center sm:flex-row sm:inline-flex"
-                        >
-                        <Link
-                            className="w-full justify-center flex items-center whitespace-nowrap transition duration-150 ease-in-out font-medium rounded-md px-5 py-3  text-white bg-gradient-to-r 
-                            from-violet-500/80 via-violet-500 to-purple-300/80 hover:bg-violet-400 group leading-none"
-                            href="/overview"
-                        > 
-                            Baixar currículo{" "}
-                            <ArrowRight className="w-3 h-3 tracking-normal text-white group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1" />
-                        </Link>
-
-                        <Link
-                            className="w-full transition duration-150 ease-in-out text-zinc-200 hover:text-violet-400"
-                            href="https://github.com/chronark/highstorm"
-                            target="_blank"
-                        >
-                            Fale comigo
-                        </Link>
-                        </div>
-                    </div>
-                </div>
+              <Link
+                className="w-full text-zinc-200 transition duration-150 ease-in-out hover:text-violet-400"
+                href="https://github.com/chronark/highstorm"
+                target="_blank"
+              >
+                Fale comigo
+              </Link> */}
             </div>
-            
-        </section>
-    )
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }
